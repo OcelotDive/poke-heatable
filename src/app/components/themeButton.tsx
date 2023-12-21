@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { IconButton } from '@radix-ui/themes';

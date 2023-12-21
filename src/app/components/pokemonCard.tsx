@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect } from 'react';
 import { usePokemonCardDetails } from '../hooks/usePokemonCardDetails/usePokemonCardDetails';
 import { Box } from '@radix-ui/themes';

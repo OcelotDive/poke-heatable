@@ -13,15 +13,6 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      animation: {
-        fade: 'fadeOut 5s ease-in-out',
-      },
-      keyframes: ({theme}) => ({
-        fadeOut: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
-        },
-      }),
     },
   },
   plugins: [require('tailwind-scrollbar')],

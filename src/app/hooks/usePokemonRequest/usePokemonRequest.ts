@@ -5,7 +5,7 @@ import { pagingOptions, Paging } from "@/app/constants/paging";
 import { UsePokemonRequest } from "./usePokemonRequestType";
 
 export const usePokemonRequest = (): UsePokemonRequest => {
-    const [options, setOptions] = useState<Paging | null>(pagingOptions);
+    const [options, setOptions] = useState<Paging>(pagingOptions);
     const [pokemonList, setPokemonList] = useState<unknown[]>([]);
 
     const getPokemonList = async () => {
