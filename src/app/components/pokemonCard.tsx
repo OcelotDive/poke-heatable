@@ -92,7 +92,10 @@ export const PokemonCard: React.FC<Props> = ({
             </span>
           </Box>
           <Box className="h-28">
-            <span className="line-clamp-5 py-2 text-base font-semibold leading-relaxed leading-4">
+            <span
+              className="line-clamp-5 py-2 text-base font-semibold leading-relaxed"
+              style={{ lineHeight: '1.25rem' }}
+            >
               {isLoading || isRefetching ? <Spinner /> : truncate(ability, 188)}
             </span>
           </Box>
