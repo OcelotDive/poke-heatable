@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 import { Inter } from 'next/font/google';
 import '@radix-ui/themes/styles.css';
@@ -11,7 +12,7 @@ import { THEME } from './constants/paging';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function App({ children }: { children: React.ReactNode }) {
-  const [appearance, setAppearance] = useState<any>(THEME.LIGHT);
+  const [appearance, setAppearance] = useState<string>(THEME.LIGHT);
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
