@@ -193,7 +193,10 @@ export const TableWrapper: React.FC<Props> = ({
         </TableRoot>
       </Box>
       <Box>
-        <PageSizing updatePageSizing={updatePageSizing} />
+        <PageSizing
+          updatePageSizing={updatePageSizing}
+          isSearchMode={isSearchMode}
+        />
         {!displayAlert && !isSearchMode && (
           <Pagination
             count={count}

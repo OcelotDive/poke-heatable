@@ -23,7 +23,7 @@ export default function HomeView() {
   const [selectedPokemon, setSelectedPokemon] = useState<unknown>(null);
 
   useEffect(() => {
-    getList({ skip, take: pageSize, query: searchQuery });
+    getList({ skip: pagingOptions.skip, take: pageSize, query: searchQuery });
     if (searchQuery) {
       setIsSearchMode(true);
     } else if (!searchQuery) {

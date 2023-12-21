@@ -2,9 +2,13 @@ import React, { Dispatch, SetStateAction } from 'react';
 
 type Props = {
   updatePageSizing: Dispatch<SetStateAction<number>>;
+  isSearchMode: boolean;
 };
 
-export const PageSizing: React.FC<Props> = ({ updatePageSizing }) => {
+export const PageSizing: React.FC<Props> = ({
+  updatePageSizing,
+  isSearchMode,
+}) => {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     updatePageSizing(Number(e.target.value));
   };
@@ -22,6 +26,7 @@ export const PageSizing: React.FC<Props> = ({ updatePageSizing }) => {
         rounded-lg focus:ring-blue-500 
         block w-20 p-2.5 text-black"
         onChange={(e) => handleChange(e)}
+        disabled={isSearchMode}
       >
         <option value={10}>10</option>
         <option selected value={20}>
