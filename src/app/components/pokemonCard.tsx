@@ -54,22 +54,24 @@ export const PokemonCard: React.FC<Props> = ({
             {selectedPokemon?.stats[0]?.base_stat ?? 'N/A'}
           </span>
         </Box>
-        <Box className="absolute flex h-18 text-xs flex-col capitalize font-bold right-3 top-16">
+        <Box className="absolute flex h-18 text-xs flex-col capitalize font-bold right-3 top-16 z-50">
           {selectedPokemon.stats.slice(1, 5).map((stat: any, index: any) => (
             <Box className="flex" key={`${stat?.stat?.name_}${index}`}>
               <span>{stat.stat?.name}</span> - <span>{stat.base_stat}</span>
             </Box>
           ))}
         </Box>
-        <img
-          src={
-            selectedPokemon?.sprites?.other['official-artwork']?.front_default
-          }
-          width="300"
-          height="200"
-          className="rounded-t-3xl justify-center grid h-80 object-cover"
-          alt=""
-        />
+        <Box style={{ scale: '90%' }}>
+          <img
+            src={
+              selectedPokemon?.sprites?.other['official-artwork']?.front_default
+            }
+            width="300"
+            height="200"
+            className="rounded-t-3xl justify-center grid h-80 object-cover"
+            alt="poke_image"
+          />
+        </Box>
         <Box>
           <small className="flex justify-between capitalize border-2 border-red-800 rounded-md pl-6 pr-6 ml-3 mr-3 font-bold">
             No. {selectedPokemon?.id}

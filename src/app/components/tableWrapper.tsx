@@ -18,6 +18,7 @@ import { Pagination } from './pagination';
 import { Paging } from '../constants/paging';
 import { NoResultsAlert } from './noResultsAlert';
 import { PageSizing } from './pageSizing';
+import { convertHeight, convertWeight } from '@/helperFunctions/heightWeight';
 
 type Props = {
   list: any[];
@@ -139,7 +140,10 @@ export const TableWrapper: React.FC<Props> = ({
                   />
                 </TableColumnHeaderCell>
                 {headers.map((header) => (
-                  <TableColumnHeaderCell key={header.id}>
+                  <TableColumnHeaderCell
+                    key={header.id}
+                    align={header.id === 0 ? 'left' : 'center'}
+                  >
                     {header.title}
                   </TableColumnHeaderCell>
                 ))}
@@ -163,27 +167,27 @@ export const TableWrapper: React.FC<Props> = ({
                         style={{ minHeight: '3rem', minWidth: '3rem' }}
                       />
                     </TableCell>
-                    <TableCell className="align-middle">{item?.name}</TableCell>
-                    <TableCell className="align-middle" align="center">
+                    <TableCell align="left">{item?.name}</TableCell>
+                    <TableCell align="center">
                       {item?.base_experience}
                     </TableCell>
-                    <TableCell className="align-middle" align="center">
+                    <TableCell align="center">
                       {item?.stats[0]?.base_stat}
                     </TableCell>
-                    <TableCell className="align-middle">
+                    <TableCell align="center">
                       {item?.held_items[0]?.item?.name ?? 'N/A'}
                     </TableCell>
-                    <TableCell className="align-middle" align="center">
+                    <TableCell align="center">
                       {item?.abilities?.length ?? '0'}
                     </TableCell>
-                    <TableCell className="align-middle" align="center">
+                    <TableCell align="center">
                       {item?.moves?.length ?? '0'}
                     </TableCell>
-                    <TableCell className="align-middle" align="center">
-                      {item?.height ?? 'N/A'}
+                    <TableCell align="center">
+                      {convertHeight(item?.height) ?? 'N/A'}
                     </TableCell>
-                    <TableCell className="align-middle" align="center">
-                      {item?.weight ?? 'N/A'}
+                    <TableCell align="center">
+                      {`${convertWeight(item?.weight)} lbs.` ?? 'N/A'}
                     </TableCell>
                   </TableRow>
                 );
